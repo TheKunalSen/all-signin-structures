@@ -10,11 +10,12 @@ const dotenv = require('dotenv').config();
 
 app.use(
     session({
-        secret: "cyberwolve",
+        secret: process.env.SESSION_SECREET,
         resave: false,
         saveUninitialized: true,
         cookie: {
-            maxAge: 24 * 60 * 60 * 1000 
+            maxAge: 60 * 1000 ,
+            expires: new Date(Date.now() + 60 * 1000)
         }
     })
 );
@@ -22,18 +23,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use("/auth", require("./routes/gooogle_routes"));
+app.use("/auth/google", require("./routes/gooogle_routes"));
+app.use("/auth/facebook", require("./routes/facebook_routes"));
 
 
 app.use("/dashboard", require("./routes/dashboard"));
 
+app.get("/logeedOut",(req,res)=>{
+    res.json("logged out")
+})
 
 
-
-// app.get("/dashboard",(req,res)=>{
-
-//     res.json(req.user)
-// })
 app.listen(5000, () => {
     console.log("Server started on port 5000");
 });

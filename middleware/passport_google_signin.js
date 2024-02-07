@@ -1,7 +1,7 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const passport = require("passport");
+const passport_google = require("passport");
 
-passport.use(
+passport_google.use(
     new GoogleStrategy(
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
@@ -22,12 +22,12 @@ passport.use(
     )
 );
 
-passport.serializeUser((user, done) => {
+passport_google.serializeUser((user, done) => {
     done(null, user);
 });
 
-passport.deserializeUser((user, done) => {
+passport_google.deserializeUser((user, done) => {
     done(null, user);
 });
 
-module.exports = passport;
+module.exports = passport_google;

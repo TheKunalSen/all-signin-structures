@@ -2,7 +2,15 @@ const asyncHandler = require("express-async-handler");
 
 
 const displayUserName = asyncHandler((req, res) => {
-res.json(req.user.displayName)
+    if(req.user) {
+        res.json(req.user)
+        
+    }
+    else {
+        res.json("not logged in")
+        return;
+    }
+
 });
 
 
