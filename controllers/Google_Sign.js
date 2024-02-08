@@ -3,6 +3,7 @@ const passport_google = require("../middleware/passport_google_signin");
 
 const Google_Sign_in = asyncHandler((req, res) => {
   passport_google.authenticate("google", { scope: ["profile", "email"] })(req, res);
+  
 });
 
 const Google_callback = passport_google.authenticate("google", {
@@ -10,8 +11,10 @@ const Google_callback = passport_google.authenticate("google", {
   failureRedirect: "/login/failed",
 });
 
-const Google_Sign_Out = asyncHandler((req, res) => {
-  req.logout((err) => {
+
+const Google_Sign_Out = asyncHandler(async(req, res) => {
+
+req.logout((err) => {
     if (err) {
       console.error("Error logging out:", err);
       return res.status(500).send("Error logging out");

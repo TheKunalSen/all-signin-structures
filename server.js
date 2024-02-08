@@ -4,9 +4,9 @@ const passport = require("passport");
 const session = require("express-session");
 const cors = require("cors");
 const dotenv = require('dotenv').config();
+const connectDb = require('./config/mongoDb');
 
-
-
+connectDb();
 
 app.use(
     session({
@@ -15,7 +15,7 @@ app.use(
         saveUninitialized: true,
         cookie: {
             maxAge: 60 * 1000 ,
-            expires: new Date(Date.now() + 60 * 1000)
+            // expires: new Date(Date.now() + 60 * 1000)
         }
     })
 );
@@ -27,7 +27,7 @@ app.use("/auth/google", require("./routes/gooogle_routes"));
 app.use("/auth/facebook", require("./routes/facebook_routes"));
 
 
-app.use("/dashboard", require("./routes/dashboard"));
+app.use("/dashboard",  require("./routes/dashboard"));
 
 app.get("/logeedOut",(req,res)=>{
     res.json("logged out")
