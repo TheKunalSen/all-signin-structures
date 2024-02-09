@@ -4,7 +4,7 @@ const users = require("../models/Users")
 
 
 const JwtValidator = (passport)=>{
-  console.log("yes1")
+  // console.log("yes1")
 passport.use(
   new Jwtstrategy(
     {

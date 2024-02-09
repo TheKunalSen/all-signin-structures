@@ -1,20 +1,15 @@
 {
-    "signUp": {
-      "api": "http://localhost:5000/auth/google",
-      "data": "none",
-      "method": "GET",
-      "testing_tool":"browser"
-    },
-  
-  
-    "signOut": {
-      "api": "http://localhost:5000/auth/google/logout",
-      "data": "none",
-      "method": "GET",
-      "testing_tool":"browser"
-    }
-  
-  
-  
+  "signUp": {
+    "api": "http://localhost:5000/auth/google",
+    "body": "none",
+    "method": "GET",
+    "testing_tool": "browser"
+  },
+
+  "signOut": {
+    "api": "http://localhost:5000/auth/google/logout",
+    "body": "none",
+    "method": "GET",
+    "testing_tool": "browser"
   }
-  
+}

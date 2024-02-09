@@ -1,0 +1,18 @@
+{
+  "dashboard_jwt": {
+    "api": "http://localhost:5000/jwt_dashboard/profile",
+    "headers": {
+      "key": "Authorization",
+      "value": "Bearer + ' ' + <ACCESS_TOKEN>"
+    },
+    "method": "GET",
+    "testing_tool": "thunder client"
+  },
+
+  "dashboard_google": {
+    "api": "http://localhost:5000/dashboard/profile",
+    "headers": "none",
+    "method": "GET",
+    "testing_tool": "browser"
+  }
+}

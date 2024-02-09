@@ -1,26 +1,22 @@
 {
   "signUp": {
     "api": "http://localhost:5000/auth/pjwt/signup",
-    "data": {
+    "body": {
       "name": "Kunal",
       "email": "kunal@gmail.com",
       "password": "123456789"
     },
     "method": "POST",
-    "testing_tool":"thunder client"
+    "testing_tool": "thunder client"
   },
-
 
   "signin": {
     "api": "http://localhost:5000/auth/pjwt/signin",
-    "data": {
+    "body": {
       "email": "kunal@gmail.com",
       "password": "123456789"
     },
     "method": "POST",
-    "testing_tool":"thunder client"
+    "testing_tool": "thunder client"
   }
-
-
-
 }
