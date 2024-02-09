@@ -20,7 +20,7 @@ passport_google.use(
         console.log("welcome back")
         existingUser = true;
         profile.ExistingUser = existingUser;
-        console.log(profile)
+        // console.log(profile)
          callback(null, profile);
       }
       else {
